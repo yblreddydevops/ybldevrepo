@@ -22,8 +22,13 @@
         }
 
         .cloud-image {
+<<<<<<< HEAD
             width: 1900px;
             height: 250px;
+=======
+            width: 1200px;
+            height: 650px;
+>>>>>>> secondbranch
             padding-bottom: 50px;
             margin: auto;
         }
