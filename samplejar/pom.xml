@@ -70,6 +70,50 @@
           <version>3.0.0</version>
         </plugin>
       </plugins>
-    </pluginManagement>
-  </build>
+      <plugin>
+  <groupId>org.jacoco</groupId>
+  <artifactId>jacoco-maven-plugin</artifactId>
+  <version>0.5.5.201112152213</version>
+<configuratin>
+ <destFile>${basedir}/target/coverage-reports/jacoco-unit.exec</destFile>
+ <dataFile>${basedir}/target/coverage-reports/jacoco-unit.exec</destFile>
+<configuratin>
+ <executions>
+ <executions>
+  <id>jacoco-initialize</id>
+<goals>
+<goal>prepare-agent</goal>
+</goals>
+</execution>
+<execution>
+<id>report</id>
+<phase>test</phase>
+<goals>
+<goal>report</goal>
+</goals>
+</execution>
+<execution>
+<id>jacoco-check</id>
+<phase>test</phase>
+<goals>
+<goal>check</goal>
+</goals>
+<configuration>
+<rules>
+<rule>
+<element>PACKAGE</element>
+<limits>
+<limit>
+<counter>LINE</counter>
+<value>COVEREDRATIO</value>
+</limit>
+</limits>
+</rule>
+</rules>
+</configuration>
+</execution>
+</executions>
+</plugin>
+</pluginManagement>
+</build>
 </project>
